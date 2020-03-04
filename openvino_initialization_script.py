@@ -10,6 +10,7 @@ from subprocess import call
 
 file_name = "l_openvino_toolkit_p_2020.1.023.tgz" #change the filename if version does not match
 dir_name = file_name[:-4]
+print('dir_name:',dir_name)
 install_dir = "/opt/intel/openvino/"
 deployment_tools = install_dir+"deployment_tools/"
 model_optimizer = install_dir+"deployment_tools/model_optimizer/"
@@ -58,6 +59,7 @@ call("sudo %s/install_prerequisites/install_prerequisites.sh"%(model_optimizer),
 #   print("Wrong Choice! Please rerun this cell and enter the correct choice!")
 
 call("sudo %s/demo/demo_squeezenet_download_convert_run.sh"%(deployment_tools), shell=True)
+call("sudo %s/demo/demo_security_barrier_camera.sh"%(deployment_tools), shell=True) # Adding another demo (ka1shi)
 
 print("\n\nIntel OpenVINO Installation Fisnished!")
 print("Copy and Paste the following code snippet in the next cell of your notebook")
